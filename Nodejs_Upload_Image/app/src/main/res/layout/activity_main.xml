@@ -17,7 +17,7 @@
             android:id="@+id/loadimage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="fitCenter"
+            android:scaleType="center"
             android:src="@drawable/ic_insert_photo_black_24dp" />
     </LinearLayout>
     <LinearLayout
@@ -26,11 +26,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <Button
+            android:layout_weight="1"
             android:textStyle="bold"
             android:textSize="20dp"
             android:textColor="#000000"
             android:text="Upload"
             android:id="@+id/upload"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:text="test"
+            android:id="@+id/test"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>

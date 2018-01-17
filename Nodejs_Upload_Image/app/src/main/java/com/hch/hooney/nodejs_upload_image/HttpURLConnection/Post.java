@@ -1,6 +1,7 @@
 package com.hch.hooney.nodejs_upload_image.HttpURLConnection;
 
 import android.graphics.Bitmap;
+import android.util.Log;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -34,7 +35,8 @@ public class Post {
 
         // request 준비
         HttpURLConnection httpUrlConnection = null;
-        URL url = new URL("http://example.com/server.cgi");
+        Log.d(TAG, this.URL+"?fname="+filename);
+        URL url = new URL(this.URL+"?fname="+filename);
         httpUrlConnection = (HttpURLConnection) url.openConnection();
         httpUrlConnection.setUseCaches(false);
         httpUrlConnection.setDoOutput(true);

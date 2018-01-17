@@ -21,7 +21,7 @@ public class ImageCTRL {
         this.context = context;
     }
 
-    public boolean setImage(ImageView targetImageview, String targetURI, int maxheight){
+    public Bitmap setImage(ImageView targetImageview, String targetURI, int maxheight){
         try {
             Bitmap bitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(), Uri.parse(targetURI));
 
@@ -42,11 +42,13 @@ public class ImageCTRL {
             //배치해놓은 ImageView에 set
             targetImageview.setImageBitmap(resized);
 
-            //imageView.setImageBitmap(bitmap);
+            //imageView.setImageBitmap(bitmap)
+
+            return resized;
         } catch (IOException e) {
             e.printStackTrace();
             targetImageview.setImageResource(R.drawable.ic_insert_photo_black_24dp);
         }
-        return false;
+        return null;
     }
 }

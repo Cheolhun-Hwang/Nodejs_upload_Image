@@ -65,15 +65,22 @@ router.post('/show', (req, res)=> {
   
 });
 
+router.post('/file', (req, res)=> {
+    let file = req.body.file;
+    console.log('file Name : ' + file);
+    res.status(200).send('OK');
+});
+
 router.post('/upload', (req, res)=> {
     let fname = req.query.fname;
     fileName = fname;
 
+    console.log("File Name : " + fname);
     upload_I(req, res, function(err){
         if(err){
-            res.status(500).send("image ADD FILE ERROR");
+            res.status(500).send("NONE");
         }else{
-            res.status(200).redirect("/images/show?file="+fileName);
+            res.status(200).send("OK");
         }
     });
 });
